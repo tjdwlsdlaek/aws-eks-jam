@@ -122,6 +122,7 @@ echo "alias k='kubectl'" | tee -a ~/.bash_profile
 echo "alias kgp='kubectl get pods'" | tee -a ~/.bash_profile
 echo "alias kgsvc='kubectl get svc'" | tee -a ~/.bash_profile
 echo "alias kgn='kubectl get nodes -L beta.kubernetes.io/arch -L eks.amazonaws.com/capacityType -L beta.kubernetes.io/instance-type -L eks.amazonaws.com/nodegroup -L topology.kubernetes.io/zone -L karpenter.sh/provisioner-name -L karpenter.sh/capacity-type'" | tee -a ~/.bash_profile
+source ~/.bash_profile
 
 # Clone lab repositories
 #cd ~/environment
