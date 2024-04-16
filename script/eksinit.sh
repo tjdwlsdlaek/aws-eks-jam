@@ -69,6 +69,9 @@ REGION=`curl --silent -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.2
 echo "export AWS_REGION=${REGION}" | tee -a ~/.bash_profile
 echo "export AWS_DEFAULT_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
+AWS_REGION=${REGION}
+AWS_DEFAULT_REGION=${AWS_REGION}
+
 # Set accountID
 ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
@@ -114,8 +117,8 @@ sudo mv /tmp/eksctl /usr/local/bin
 
 # Install Helm
 curl -fsSL -o get_helm.sh 'https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3' 
-sudo chmod 700 get_helm.sh
-sudo ./get_helm.sh --version v3.12.2
+chmod 700 get_helm.sh
+./get_helm.sh --version v3.12.2
 
 # Install k9s
 curl -Lo k9s.tgz https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
