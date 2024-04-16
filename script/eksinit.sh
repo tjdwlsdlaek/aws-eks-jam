@@ -112,6 +112,11 @@ npm install -g c9
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 
+# Install Helm
+curl -fsSL -o get_helm.sh 'https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3' 
+sudo chmod 700 get_helm.sh
+sudo ./get_helm.sh --version v3.12.2
+
 # Install k9s
 curl -Lo k9s.tgz https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
 tar -xf k9s.tgz
