@@ -77,7 +77,7 @@ ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
 
 # Set EKS cluster name
-EKS_CLUSTER_NAME=eks-jam-ack
+EKS_CLUSTER_NAME=eks-ack-jam
 echo "export EKS_CLUSTER_NAME=${EKS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 echo "export CLUSTER_NAME=${EKS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 
